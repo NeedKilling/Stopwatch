@@ -8,41 +8,22 @@ const seconds = document.getElementById('seconds');
 
 let secondsValue = 0;
 let minetsValue = 0;
-let haourValue = 0;
+let hourValue = 0;
 let time;
 
-// function timer(){
-//     secondsValue++;
-//     seconds.innerHTML = secondsValue;
-// }
-
+function timeCounter(){
+    secondsValue++
+    seconds.innerHTML = secondsValue < 10 ? "0" + secondsValue : secondsValue;
+    if(secondsValue > 59){
+        minetsValue++
+        minets.innerHTML = secondsValue < 10 ? "0" + minetsValue : minetsValue;
+    }
+    if(minetsValue > 59){
+        hourValue++
+        hour.innerHTML = secondsValue < 10 ? "0" + hourValue : hourValue;
+    }
+}
 
 // buttons.addEventListener('click',(e)=>{
-//     switch(e.target.id){
-//         case "play": 
-//             clearInterval(time)
-//             time = setInterval(timer,100)
-//             break;
-
-//         case "stop":
-//             clearInterval(time)
-//             break;
-//     }
+//     switch(e.target.id)
 // })
-buttons.addEventListener('click',(e)=>{
-    let i = 0;
-    switch(e.target.id){
-        case "play": 
-            time = setInterval(()=>{
-                i += 1;
-                i < 10 ? seconds.innerHTML = "0" + i : seconds.innerHTML = i;  
-            },500)
-           
-            break;
-
-        case "stop":
-            clearInterval(time)
-            
-            break;
-    }
-})
