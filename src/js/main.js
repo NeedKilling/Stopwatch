@@ -16,6 +16,7 @@ let second;
 let miliSecond;
 let nowTime = 0;
 
+
 function timeCounter(){
     let curentTime = new Date().getTime();  // текущее время 
     nowTime = curentTime - startTime;   // разница во времени в милисикундах
